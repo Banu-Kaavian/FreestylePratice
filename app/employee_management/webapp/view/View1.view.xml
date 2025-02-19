@@ -1,26 +1,36 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ns.employeemanagement.controller.View1">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns="sap.m" controllerName="ns.employeemanagement.controller.View1" displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
-            <Table noDataText="Drop column list items here and columns in the area above" id="table0" items="{MainModel>/Employee}">
+            <Table noDataText="Drop column list items here and columns in the area above" id="table0"  mode="SingleSelect" items="{MainModel>/Employee}">
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                        <Button id="addempButton" icon="sap-icon://add" tooltip="{i18n>createButtonText}" press=".onCreate"/>
+                        <Button id="delempButton" icon="sap-icon://delete" tooltip="{i18n>deleteButtonText}" press=".onDelete"/>
+                        <Button id="editempButton" visible="true" icon="sap-icon://edit" tooltip="{i18n>editButtonText}" press=".onEdit"/>
+
+                    <content/>
+                    </Toolbar>
+                </headerToolbar>
                 <columns>
                     <Column id="column3">
                         <header>
-                            <Label text="ID" id="label3" />
+                            <Label text="ID" id="label3"/>
                         </header>
                     </Column>
                     <Column id="column0">
                         <header>
-                            <Label text="Name" id="label0" />
+                            <Label text="Name" id="label0"/>
                         </header>
                     </Column>
                     <Column id="column1">
                         <header>
-                            <Label text="Email" id="label1" />
+                            <Label text="Email" id="label1"/>
                         </header>
                     </Column>
                     <Column id="column2">
                         <header>
-                            <Label text="Department" id="label2" />
+                            <Label text="Department" id="label2"/>
                         </header>
                     </Column>
                 </columns>
@@ -28,13 +38,40 @@
                     <ColumnListItem type="Active" id="item0">
                         <cells>
                             <Text text="{MainModel>ID}" id="text5"/>
-                            <Text text="{MainModel>Name}" id="text2" />
-                            <Text text="{MainModel>Email}" id="text3" />
-                            <Text text="{MainModel>Department}" id="text4" />
+                            <Text text="{MainModel>Name}" id="text2"/>
+                            <Text text="{MainModel>Email}" id="text3"/>
+                            <Text text="{MainModel>Department}" id="text4"/>
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
         </content>
+        <dependents>
+        <Dialog id="CreateEmployeeDialog" title="Add Employee">
+        <form:SimpleForm id="_IDGenSimpleForm">
+    <form:content>
+        <VBox id="_IDGenVBox">
+            <Label id="_IDGenLabel1" text="ID"/>
+            <Input id="inputID" placeholder="Enter ID"/>
+            <Label id="_IDGenLabel2" text="Name"/>
+            <Input id="inputName" placeholder="Enter Name"/>
+            <Label id="_IDGenLabel3" text="Email"/>
+            <Input id="inputEmail" placeholder="Enter Email"/>
+            <Label id="_IDGenLabel4" text="Department"/>
+            <Input id="inputDepartment" placeholder="Enter Department"/>
+        </VBox>
+    </form:content>
+    </form:SimpleForm>
+    <beginButton>
+        <!-- <Button id="_IDGenButton" text="Save" press=".onSave"/> -->
+        <Button id="saveButton" text="Save" press=".onSave"/>
+
+    </beginButton>
+    <endButton>
+        <Button id="_IDGenButton1" text="Cancel" press=".onCloseDialog"/>
+    </endButton>
+</Dialog>
+</dependents>
+
     </Page>
 </mvc:View>
