@@ -9,7 +9,7 @@
                         <Button id="delempButton" icon="sap-icon://delete" tooltip="{i18n>deleteButtonText}" press=".onDelete"/>
                         <Button id="editempButton" visible="true" icon="sap-icon://edit" tooltip="{i18n>editButtonText}" press=".onEdit"/>
                         <Button id="copyempButton" visible="true" icon="sap-icon://copy" tooltip="{i18n>copyButtonText}" press=".onCopy"/>
-                        <Button id="viewempButton" visible="true" icon="sap-icon://detail-view" tooltip="{i18n>viewButtonText}" />
+                        <Button id="migratePage" visible="true" icon="sap-icon://detail-view" tooltip="{i18n>viewButtonText}" press=".onViewpage" />
                     <content/>
                     </Toolbar>
                 </headerToolbar>
