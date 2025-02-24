@@ -1,0 +1,48 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" displayBlock="true" xmlns="sap.m">
+    <Page id="migratePage1" title="migrate_Page">
+    <content>
+        <Table noDataText="Drop column list items here and columns in the area above" id="table1" items="{MainModel>/MigrateEmployee}">
+            <items>
+                <ColumnListItem type="Active" id="item1" >
+                    <cells>
+                        <Text text="Row 1 Cell 1" id="Mtext3"/>
+                        <Text text="Row 1 Cell 2" id="Mtext4"/>
+                        <Text text="Row 1 Cell 3" id="Mtext5"/></cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column id="Mcolumn0">
+                    <header>
+                        <Label text="ID" id="Mlabel0"/>
+                    </header>
+                </Column>
+                <Column id="Mcolumn1">
+                    <header>
+                        <Label text="Name" id="Mlabel1"/>
+                    </header>
+                </Column>
+                <Column id="Mcolumn2">
+                    <header>
+                        <Label text="Email" id="Mlabel2"/>
+                    </header>
+                </Column>
+                <Column id="Mcolumn3">
+                    <header>
+                        <Label text="Department" id="Mlabel3"/>
+                    </header>
+                </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="Mitem0">
+                        <cells>
+                            <Text text="{MainModel>ID}" id="Mitext5"/>
+                            <Text text="{MainModel>Name}" id="Mitext2"/>
+                            <Text text="{MainModel>Email}" id="Mitext3"/>
+                            <Text text="{MainModel>Department}" id="Mitext4"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                </Table>
+    </content>
+    </Page>
+</mvc:View>

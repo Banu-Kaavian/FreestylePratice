@@ -111,12 +111,23 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "migratePage",
+          "pattern": "migratePage",
+          "target": [
+            "migratePage1"
+          ]
         }
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "migratePage1": {
+          "id":"migratePage",
+          "name": "migratePage"
         }
       }
     },

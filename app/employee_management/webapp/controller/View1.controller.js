@@ -1,6 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast"
+    
 ], function (Controller, MessageToast) {
     "use strict";
 
@@ -145,6 +146,23 @@ sap.ui.define([
             } catch (oError) {
                 MessageToast.show("Error copying employee: " + oError.message);
             }
+        },
+        onViewpage: function () {
+            // Get the router instance
+            var oRouter = this.getOwnerComponent().getRouter();
+            console.log("button clicked");
+            //console.log(oRouter);
+
+            // Navigate to the "migratePage" target
+            if(oRouter)
+            {
+              oRouter.navTo("migratePage");
+              console.log("i am in oRouter");
+            }
+            else{
+                console.log("Route not found");``
+            }
+            
         }
         
     });
